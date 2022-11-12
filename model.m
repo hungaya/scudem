@@ -1,20 +1,20 @@
 function Np = model(t, N)
     % Coefficients
     % N1
-    r1 = 1.2;
-    K1 = 2;
-    b12 = 0.5;
-    c1 = 2;
+    r1 = 1;
+    K1 = 1;
+    b12 = 1;
+    c1 = 1;
     
     % N2
-    r2 = -0.8;
-    K2 = 5;
-    b21 = 0.3;
-    c2 = 2;
+    r2 = prey_r2(t);
+    K2 = 1;
+    b21 = 1;
+    c2 = 1;
     
     % Human - Np
     rp = 1;
-    Kp = 2;
+    Kp = 1;
     
     Np = [
       r1*N(1) * (1 - N(1)/K1 + b12*N(2)/K1 + c1*N(3)/K1);
